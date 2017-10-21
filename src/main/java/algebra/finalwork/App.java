@@ -1,45 +1,39 @@
 package algebra.finalwork;
 
-import algebra.finalwork.model.Matriz;
-import algebra.finalwork.simpleoperations.SimpleOperations;
-import algebra.finalwork.transposicao.Transposicao;
-import algebra.finalwork.utils.MatrizUtils;
+import algebra.finalwork.view.FXML.FXMLResources;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 
 /**
  * Hello world!
  *
  */
-public class App {
-	public static void main(String[] args) {
-		Object[][] matriz = new Object[2][2];
-		matriz[0][0] = 1;
-		matriz[0][1] = 2;
-		matriz[1][0] = 3;
-		matriz[1][1] = 4;
+public class App extends Application{
+
+	private static Stage appStage;
+	
+	
+	
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// TODO Auto-generated method stub
+	    Parent root = FXMLLoader.load(FXMLResources.HOMESCREEN);
+	    System.out.println(FXMLResources.HOMESCREEN);
+	    Scene scene  = new Scene(root,615,437);
+	    
+		appStage = primaryStage;
+		appStage.centerOnScreen();
+		appStage.setTitle("Algebra Linear");
+		appStage.setScene(scene);
+		appStage.show();
 		
 		
-		Object[][] matriz2 = new Object[2][2];
-		matriz2[0][0] = 5;
-		matriz2[0][1] = 3;
-		matriz2[1][0] = 1;
-		matriz2[1][1] = 9;
-		
-		Matriz matrizA = MatrizUtils.createMatriz(matriz, 2,2, true);
-		Matriz matrizB = MatrizUtils.createMatriz(matriz2, 2,2, true);
-		
-		SimpleOperations so = new SimpleOperations();
-		
-		Matriz result = so.subtracao(matrizA,matrizB);
 		
 		
-		Transposicao T = new Transposicao();
-		matriz = T.transposicao(matriz, 2, 2);
-		int m = 2,n = 2;
-		for (int i = 0; i <= n - 1; i++) {
-			for (int j = 0; j <= m - 1; j++) {
-				System.out.println(result.getMatriz()[i][j]);
-			}
-		}
 	}
 	
 	
