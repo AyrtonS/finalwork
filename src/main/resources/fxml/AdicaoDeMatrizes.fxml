@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1366.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1366.0" fx:controller="algebra.finalwork.controller.AdicaoController" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
   <children>
     <Pane layoutX="14.0" layoutY="40.0" prefHeight="316.0" prefWidth="335.0">
       <children>
@@ -19,9 +19,17 @@
       <children>
         <TextField layoutX="59.0" layoutY="149.0" prefWidth="200.0" promptText="Colunas" />
         <TextField layoutX="59.0" layoutY="108.0" prefWidth="200.0" promptText="Linhas" />
-        <Button alignment="BASELINE_RIGHT" layoutX="200.0" layoutY="185.0" mnemonicParsing="false" text="Gerar" />
+        <Button onAction="#buildScenario" alignment="BASELINE_RIGHT" layoutX="200.0" layoutY="185.0" mnemonicParsing="false" text="Gerar" />
       </children>
     </Pane>
-    <Pane layoutX="411.0" layoutY="89.0" prefHeight="584.0" prefWidth="783.0" />
+    <Pane layoutX="411.0" layoutY="89.0" prefHeight="584.0" prefWidth="783.0" fx:id="mainPane">
+    <children>
+        
+        
+      </children>
+    
+    
+    
+    </Pane>
   </children>
 </AnchorPane>

@@ -7,12 +7,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class AdicaoController {
 
 
-	
+@FXML
+private TextField option;
+
+@FXML
+private Pane mainPane;
 
 @FXML
 public void loadAddition(){
@@ -34,9 +40,32 @@ try {
 	// TODO Auto-generated catch block
 	e.printStackTrace();
 }
+
+}
+
+@FXML
+public void buildScenario(){
+	
+	
+	buildScenario(2,3);
+	
+} 
+
+private void buildScenario(int column,int line){
+	
+	for(int i = 0 ; i < line-1 ; i++){
+		for(int j = 0; j < column-1 ; j++){
+			
+			TextField op= new TextField();
+			mainPane.getChildren().add(op);
+			
+		}
+		
+	}
 	
 	
 }
+
 
 	
 }
