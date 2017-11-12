@@ -10,8 +10,6 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" fx:controller="algebra.finalwork.controller.HomeScreenController" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.9998779296875" prefWidth="615.0000999999975" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
   <children>
-    <Pane fx:id="mainPane" layoutX="3.0" layoutY="0.0" prefHeight="436.9998779296875" prefWidth="612.0001220703125">
-      <children>
         <MenuBar id="menubar" blendMode="DARKEN" layoutX="-2.0" layoutY="0.0" opacity="1.0" prefWidth="615.0001220703125" style="">
           <menus>
             <Menu mnemonicParsing="false" text="Arquivo">
@@ -48,6 +46,4 @@
           </stylesheets>
         </MenuBar>
       </children>
-    </Pane>
-  </children>
-</AnchorPane>
+    </AnchorPane>

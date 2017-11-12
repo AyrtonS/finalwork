@@ -16,6 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -25,6 +26,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.RowConstraints;
+
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class AdicaoController {
@@ -34,6 +37,11 @@ public class AdicaoController {
 
 	@FXML
 	private GridPane secondPane;
+
+@FXML
+private TextField option;
+
+
 
 	@FXML
 	private GridPane thirdPane;
@@ -101,7 +109,6 @@ public class AdicaoController {
 				addField(i, j);
 			}
 		}
-
 	
 
 	}
