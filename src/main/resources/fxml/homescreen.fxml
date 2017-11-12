@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" fx:controller="algebra.finalwork.controller.AdicaoController" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.9998779296875" prefWidth="615.0000999999975" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" fx:controller="algebra.finalwork.controller.HomeScreenController" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.9998779296875" prefWidth="615.0000999999975" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
   <children>
     <Pane fx:id="mainPane" layoutX="3.0" layoutY="0.0" prefHeight="436.9998779296875" prefWidth="612.0001220703125">
       <children>
@@ -31,7 +31,7 @@
             <Menu mnemonicParsing="false" text="Funçoes">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#loadAddition" text="Adicao de Matrizes" />
-                <MenuItem mnemonicParsing="false" text="Subtracao de Matrizes" />
+                <MenuItem mnemonicParsing="false" onAction="#loadSubtraction" text="Subtracao de Matrizes" />
                 <MenuItem mnemonicParsing="false" text="Multiplicaçao de Matrizes" />
                 <MenuItem mnemonicParsing="false" text="Multiplicaçao por Escalar" />
               </items>

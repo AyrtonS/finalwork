@@ -27,7 +27,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 
-public class AdicaoController {
+public class SubController {
 
 	@FXML
 	private GridPane grid;
@@ -45,7 +45,7 @@ public class AdicaoController {
 	private TextField columns;
 
 	@FXML
-	public void loadAddition() {
+	public void loadSubtraction() {
 
 		try {
 			Parent root = FXMLLoader.load(FXMLResources.SUMSCREEN);
@@ -55,7 +55,7 @@ public class AdicaoController {
 			Stage addingStage = new Stage();
 			addingStage.setScene(scene);
 			addingStage.centerOnScreen();
-			addingStage.setTitle("Adição de Matrizes");
+			addingStage.setTitle("Subtração de Matrizes");
 			addingStage.show();
 
 		} catch (IOException e) {
@@ -157,7 +157,7 @@ public class AdicaoController {
 						if (!firstFields.getText().equals("") && !secondFields.getText().equals("")) {
 							a = Integer.parseInt(firstFields.getText());
 							b = Integer.parseInt(secondFields.getText());
-							int result = a + b;
+							int result = a - b;
 
 							field.setText(String.valueOf(result));
 						} else {
