@@ -58,4 +58,26 @@ public class HomeScreenController {
 	}
 	
 	
+	@FXML
+	public void loadEscalar() {
+
+		try {
+			Parent root = FXMLLoader.load(FXMLResources.MULTESCALARSCREEN);
+
+			Scene scene = new Scene(root, 1366, 720);
+
+			Stage addingStage = new Stage();
+			addingStage.setScene(scene);
+			addingStage.centerOnScreen();
+			addingStage.setTitle("Multiplicação por Escalar");
+			addingStage.show();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
+	
 }
