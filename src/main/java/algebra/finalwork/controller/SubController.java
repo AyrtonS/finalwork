@@ -155,11 +155,18 @@ public class SubController {
 						int a = 0;
 						int b = 0;
 						if (!firstFields.getText().equals("") && !secondFields.getText().equals("")) {
+						try{	
 							a = Integer.parseInt(firstFields.getText());
 							b = Integer.parseInt(secondFields.getText());
 							int result = a - b;
 
 							field.setText(String.valueOf(result));
+						}catch(NumberFormatException numberEX){
+							System.err.println(numberEX);
+							
+						}
+			
+							
 						} else {
 							// int result = a+b;
 

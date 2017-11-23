@@ -38,10 +38,8 @@ public class AdicaoController {
 	@FXML
 	private GridPane secondPane;
 
-@FXML
-private TextField option;
-
-
+	@FXML
+	private TextField option;
 
 	@FXML
 	private GridPane thirdPane;
@@ -75,13 +73,12 @@ private TextField option;
 
 	@FXML
 	public void createMatrix() {
-		
+
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setContentText("Olá, sou seu assistente\n Ao inserir o numero no campo aperte ENTER.\n"
 				+ "A Matriz ao lado vai atualizar ja com o resultado... QUE MÁGICO;D");
 		alert.show();
-		
-		
+
 		Region p = new Region();
 		p.setPrefSize(Double.MAX_VALUE, 0.0);
 
@@ -109,7 +106,6 @@ private TextField option;
 				addField(i, j);
 			}
 		}
-	
 
 	}
 
@@ -162,11 +158,19 @@ private TextField option;
 						int a = 0;
 						int b = 0;
 						if (!firstFields.getText().equals("") && !secondFields.getText().equals("")) {
-							a = Integer.parseInt(firstFields.getText());
-							b = Integer.parseInt(secondFields.getText());
-							int result = a + b;
+							
+							try{
+								a = Integer.parseInt(firstFields.getText());
+								b = Integer.parseInt(secondFields.getText());
+								int result = a + b;
 
-							field.setText(String.valueOf(result));
+								field.setText(String.valueOf(result));
+							}catch(NumberFormatException numberEX){
+								System.err.println(numberEX);
+								
+							}
+				
+
 						} else {
 							// int result = a+b;
 
