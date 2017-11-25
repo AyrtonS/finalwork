@@ -80,4 +80,25 @@ public class HomeScreenController {
 	}
 	
 	
+	@FXML
+	public void loadTransposta() {
+
+		try {
+			Parent root = FXMLLoader.load(FXMLResources.TRANSPOSTASCREEN);
+
+			Scene scene = new Scene(root);
+
+			Stage addingStage = new Stage();
+			addingStage.setScene(scene);
+			addingStage.centerOnScreen();
+			addingStage.setTitle("Transposta");
+			addingStage.show();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
 }

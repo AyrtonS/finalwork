@@ -46,6 +46,7 @@ public class MultiplicacaoController implements Initializable {
 
 		try {
 			
+			
 			linValue = Integer.parseInt(line.getText());
 			colValue = Integer.parseInt(col.getText());
 			
@@ -116,6 +117,7 @@ public class MultiplicacaoController implements Initializable {
 		}
 		
 		initialDesign();
+		
 		return matriz;
 	}
 
@@ -191,11 +193,6 @@ public class MultiplicacaoController implements Initializable {
 		// TODO Auto-generated method stub
 		
 		initialDesign();
-		
-		
-		
-		
-		
 		
 	}
 
