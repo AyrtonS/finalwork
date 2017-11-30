@@ -70,99 +70,88 @@ public class TranspostaController implements Initializable {
 		calculate.setVisible(true);
 		lineField.setDisable(true);
 		columnField.setDisable(true);
-		if(!secondGrid.getChildren().isEmpty())
-		secondGrid.getChildren().clear();
+		if (!secondGrid.getChildren().isEmpty())
+			secondGrid.getChildren().clear();
 	}
 
 	private void addFieldFirstGrid(int line, int column) {
 		TextField textField = new TextField();
 		textField.setMaxSize(30, 20);
-		
-		try{
+
+		try {
 			textField.setText("0");
-		}catch (NullPointerException e) {
+		} catch (NullPointerException e) {
 			textField.setText("0");
 		}
 		firstGrid.add(textField, column, line);
 
 	}
-	
+
 	private void addFieldSecondGrid(int line, int column) {
 		TextField textField = new TextField();
 		textField.setMaxSize(30, 20);
-		
-		try{
-			textField.setText(""+matriz.getMatriz()[line][column]);
-		}catch (NullPointerException e) {
+
+		try {
+			textField.setText("" + matriz.getMatriz()[line][column]);
+		} catch (NullPointerException e) {
 			textField.setText("0");
 		}
 		secondGrid.add(textField, column, line);
 
 	}
-	
+
 	@FXML
 	public void calculaTransposta() {
 		ListIterator<Node> nodes = firstGrid.getChildren().listIterator();
 		int i = 0;
 		int j = 0;
+
+		lineCount = Integer.parseInt(lineField.getText());
+		columnCount = Integer.parseInt(columnField.getText());
+
 		newMatriz = new Object[lineCount][columnCount];
 		while (nodes.hasNext()) {
 			TextField field = (TextField) nodes.next();
 			if (!field.equals("")) {
 				try {
-					if(lineCount < columnCount){
-					if(j<=lineCount){
-						System.out.println("ENTROU : "+i +" | "+j);
-						newMatriz[i][j] = Integer.parseInt(field.getText());
-						System.out.print(newMatriz[i][j]);
-						System.out.print("|");
-						j++;
-						
-						
-					}
-					if(i==columnCount && j==lineCount){
-						System.out.println("iguais : "+i +" | "+j);
-						newMatriz[i][j] = Integer.parseInt(field.getText());
-					}if(lineCount<j){
-						j = 0;
-						i++;
-						newMatriz[i][j] = Integer.parseInt(field.getText());
-						System.out.println("");
-
-					}
-					//System.out.println("linha:"+j+" | coluna:"+i+" | " +newMatriz[i][j]);
-					}else{
-						System.out.println("executou o segundo");
-						if(i<=lineCount){
-							System.out.println("ENTROU : "+i +" | "+j);
+					if (lineCount < columnCount) {
+						if (j <= lineCount) {
+							System.out.println("ENTROU : " + i + " | " + j);
 							newMatriz[i][j] = Integer.parseInt(field.getText());
 							System.out.print(newMatriz[i][j]);
 							System.out.print("|");
-							i++;
-							
-						
-							
-						}
-						if(i==columnCount && j==lineCount){
-							System.out.println("iguais : "+i +" | "+j);
-							newMatriz[i][j] = Integer.parseInt(field.getText());
-						}if(lineCount<i){
-							i = 0;
 							j++;
+
+						}
+						if (i == columnCount && j == lineCount) {
+							System.out.println("iguais : " + i + " | " + j);
+							newMatriz[i][j] = Integer.parseInt(field.getText());
+						}
+						if (lineCount < j) {
+							j = 0;
+							i++;
 							newMatriz[i][j] = Integer.parseInt(field.getText());
 							System.out.println("");
 
 						}
-						
-						
+					} else {
+						if (j < columnCount) {
+							newMatriz[i][j] = Integer.parseInt(field.getText());
+							System.out.println("i = " + i + " j = " + j + " | " + newMatriz[i][j]);
+							j++;
+						}
+						if (i == lineCount && j == columnCount) {
+
+						}
+						if (j == columnCount) {
+							i++;
+							j = 0;
+						}
+
 					}
-					
-					
-					
-					
-					
+
 				} catch (IndexOutOfBoundsException e) {
-						System.out.println("CRASH IN line = "+j + "and column = "+i);
+					e.printStackTrace();
 				}
 
 			} else {
@@ -170,8 +159,6 @@ public class TranspostaController implements Initializable {
 			}
 
 		}
-		
-		//System.out.println(newMatriz[0][0]);
 		matriz.setMatriz(Transposicao.transposicao(newMatriz, lineCount, columnCount));
 		matriz.setLine(columnCount);
 		matriz.setColumn(lineCount);
@@ -185,18 +172,17 @@ public class TranspostaController implements Initializable {
 
 		else
 			matriz.setQuadrada(false);
-		
+
 		loadSecondGrid();
 		newMatriz = null;
-		
-		
+
 		lineField.setDisable(false);
 		columnField.setDisable(false);
 		calculate.setVisible(false);
 		generate.setVisible(true);
-		
+
 	}
-	
+
 	private void loadSecondGrid() {
 
 		for (int i = 0; i < columnCount; i++) {
