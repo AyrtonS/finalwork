@@ -70,15 +70,16 @@ public class TranspostaController implements Initializable {
 		calculate.setVisible(true);
 		lineField.setDisable(true);
 		columnField.setDisable(true);
-
+		if(!secondGrid.getChildren().isEmpty())
+		secondGrid.getChildren().clear();
 	}
 
 	private void addFieldFirstGrid(int line, int column) {
 		TextField textField = new TextField();
-		textField.setMaxSize(80, 20);
+		textField.setMaxSize(30, 20);
 		
 		try{
-			textField.setText(""+matriz.getMatriz()[line][column]);
+			textField.setText("0");
 		}catch (NullPointerException e) {
 			textField.setText("0");
 		}
@@ -88,7 +89,7 @@ public class TranspostaController implements Initializable {
 	
 	private void addFieldSecondGrid(int line, int column) {
 		TextField textField = new TextField();
-		textField.setMaxSize(80, 20);
+		textField.setMaxSize(30, 20);
 		
 		try{
 			textField.setText(""+matriz.getMatriz()[line][column]);
@@ -132,12 +133,12 @@ public class TranspostaController implements Initializable {
 					//System.out.println("linha:"+j+" | coluna:"+i+" | " +newMatriz[i][j]);
 					}else{
 						System.out.println("executou o segundo");
-						if(j<=columnCount){
+						if(i<=lineCount){
 							System.out.println("ENTROU : "+i +" | "+j);
 							newMatriz[i][j] = Integer.parseInt(field.getText());
 							System.out.print(newMatriz[i][j]);
 							System.out.print("|");
-							j++;
+							i++;
 							
 						
 							
@@ -145,9 +146,9 @@ public class TranspostaController implements Initializable {
 						if(i==columnCount && j==lineCount){
 							System.out.println("iguais : "+i +" | "+j);
 							newMatriz[i][j] = Integer.parseInt(field.getText());
-						}if(columnCount<j){
-							j = 0;
-							i++;
+						}if(lineCount<i){
+							i = 0;
+							j++;
 							newMatriz[i][j] = Integer.parseInt(field.getText());
 							System.out.println("");
 
@@ -187,8 +188,10 @@ public class TranspostaController implements Initializable {
 		
 		loadSecondGrid();
 		newMatriz = null;
-		firstGrid = new GridPane();
-		secondGrid = new GridPane();
+		
+		
+		lineField.setDisable(false);
+		columnField.setDisable(false);
 		calculate.setVisible(false);
 		generate.setVisible(true);
 		
