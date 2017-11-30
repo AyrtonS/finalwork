@@ -95,7 +95,7 @@ public class TranspostaController implements Initializable {
 		}catch (NullPointerException e) {
 			textField.setText("0");
 		}
-		secondGrid.add(textField, line, column);
+		secondGrid.add(textField, column, line);
 
 	}
 	
@@ -104,26 +104,62 @@ public class TranspostaController implements Initializable {
 		ListIterator<Node> nodes = firstGrid.getChildren().listIterator();
 		int i = 0;
 		int j = 0;
-		newMatriz = new Object[columnCount][lineCount];
+		newMatriz = new Object[lineCount][columnCount];
 		while (nodes.hasNext()) {
 			TextField field = (TextField) nodes.next();
 			if (!field.equals("")) {
 				try {
-					if(j<=lineCount-1){
-						System.out.println("ENTROU");
-						newMatriz[j][i] = Integer.parseInt(field.getText());
+					if(lineCount < columnCount){
+					if(j<=lineCount){
+						System.out.println("ENTROU : "+i +" | "+j);
+						newMatriz[i][j] = Integer.parseInt(field.getText());
+						System.out.print(newMatriz[i][j]);
+						System.out.print("|");
 						j++;
-						if(i == j){
-							newMatriz[j][i] = Integer.parseInt(field.getText());
-						}
+						
+						
 					}
-					else{
+					if(i==columnCount && j==lineCount){
+						System.out.println("iguais : "+i +" | "+j);
+						newMatriz[i][j] = Integer.parseInt(field.getText());
+					}if(lineCount<j){
 						j = 0;
 						i++;
+						newMatriz[i][j] = Integer.parseInt(field.getText());
+						System.out.println("");
 
 					}
 					//System.out.println("linha:"+j+" | coluna:"+i+" | " +newMatriz[i][j]);
+					}else{
+						System.out.println("executou o segundo");
+						if(j<=columnCount){
+							System.out.println("ENTROU : "+i +" | "+j);
+							newMatriz[i][j] = Integer.parseInt(field.getText());
+							System.out.print(newMatriz[i][j]);
+							System.out.print("|");
+							j++;
+							
+						
+							
+						}
+						if(i==columnCount && j==lineCount){
+							System.out.println("iguais : "+i +" | "+j);
+							newMatriz[i][j] = Integer.parseInt(field.getText());
+						}if(columnCount<j){
+							j = 0;
+							i++;
+							newMatriz[i][j] = Integer.parseInt(field.getText());
+							System.out.println("");
 
+						}
+						
+						
+					}
+					
+					
+					
+					
+					
 				} catch (IndexOutOfBoundsException e) {
 						System.out.println("CRASH IN line = "+j + "and column = "+i);
 				}
@@ -151,6 +187,11 @@ public class TranspostaController implements Initializable {
 		
 		loadSecondGrid();
 		newMatriz = null;
+		firstGrid = new GridPane();
+		secondGrid = new GridPane();
+		calculate.setVisible(false);
+		generate.setVisible(true);
+		
 	}
 	
 	private void loadSecondGrid() {
