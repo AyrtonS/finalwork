@@ -91,11 +91,11 @@ public class TranspostaController implements Initializable {
 		textField.setMaxSize(80, 20);
 		
 		try{
-			textField.setText(""+matriz.getMatriz()[column][line]);
+			textField.setText(""+matriz.getMatriz()[line][column]);
 		}catch (NullPointerException e) {
 			textField.setText("0");
 		}
-		secondGrid.add(textField, column, line);
+		secondGrid.add(textField, line, column);
 
 	}
 	
@@ -111,10 +111,10 @@ public class TranspostaController implements Initializable {
 				try {
 					if(j<=lineCount-1){
 						System.out.println("ENTROU");
-						newMatriz[i][j] = Integer.parseInt(field.getText());
+						newMatriz[j][i] = Integer.parseInt(field.getText());
 						j++;
 						if(i == j){
-							newMatriz[i][j] = Integer.parseInt(field.getText());
+							newMatriz[j][i] = Integer.parseInt(field.getText());
 						}
 					}
 					else{
