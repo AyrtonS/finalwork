@@ -101,4 +101,27 @@ public class HomeScreenController {
 
 	}
 	
+	
+	
+	@FXML
+	public void loadMultimatrizes() {
+
+		try {
+			Parent root = FXMLLoader.load(FXMLResources.MULTIMATRIZ);
+
+			Scene scene = new Scene(root);
+
+			Stage addingStage = new Stage();
+			addingStage.setScene(scene);
+			addingStage.centerOnScreen();
+			addingStage.setTitle("Multiplicação de Matrizes");
+			addingStage.show();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
 }

@@ -25,7 +25,7 @@
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#loadAddition" text="Adicao de Matrizes" />
                 <MenuItem mnemonicParsing="false" onAction="#loadSubtraction" text="Subtracao de Matrizes" />
-                <MenuItem mnemonicParsing="false" text="Multiplicaçao de Matrizes" />
+                <MenuItem mnemonicParsing="false" onAction="#loadMultimatrizes" text="Multiplicaçao de Matrizes" />
                 <MenuItem mnemonicParsing="false" onAction="#loadEscalar" text="Multiplicaçao por Escalar" />              	
               	<MenuItem mnemonicParsing="false" onAction="#loadTransposta" text="Matriz Transposta" />
               </items>
