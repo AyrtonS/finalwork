@@ -27,6 +27,8 @@ public class MultiMatrizesController implements Initializable {
 	@FXML
 	private GridPane M2;
 	@FXML
+	private GridPane M3;
+	@FXML
 	private Button calculate;
 	@FXML
 	private TextField lintmf1;
@@ -43,8 +45,10 @@ public class MultiMatrizesController implements Initializable {
 	public static int LINHASM2;
 	public static int COLUNASM2;
 
-	public static double[][] newMatrizM1;
-	public static double[][] newMatrizM2;
+	public static Object[][] newMatrizM1;
+	public static Object[][] newMatrizM2;
+	public static double[][] newMatrizMultiplied;
+
 	/**
 	 * 
 	 */
@@ -118,31 +122,77 @@ public class MultiMatrizesController implements Initializable {
 
 		int i = 0;
 		int j = 0;
-
+		newMatrizM1 = new Object[LINHASM1][COLUNASM1];
 		while (items.hasNext()) {
 
 			TextField field = (TextField) items.next();
 			if (!field.equals("")) {
 				if (j < COLUNASM1) {
 					newMatrizM1[i][j] = Double.parseDouble(field.getText());
+					//System.out.println(newMatrizM1[i][j]);
+
 				}
-				if(j == COLUNASM1){
+				if (j == COLUNASM1) {
 					j = 0;
 					i++;
 				}
 			}
 
 		}
-		Matriz A = new Matriz();
-		//A.setMatriz(newMatrizM1);
-		
-		
+
+		ListIterator<Node> items2 = M2.getChildren().listIterator();
+
+		i = 0;
+		j = 0;
+		newMatrizM2 = new Object[LINHASM2][COLUNASM2];
+
+		while (items2.hasNext()) {
+
+			TextField field = (TextField) items2.next();
+			if (!field.equals("")) {
+				if (j < COLUNASM2) {
+					newMatrizM2[i][j] = Double.parseDouble(field.getText());
+				}
+				if (j == COLUNASM2) {
+					j = 0;
+					i++;
+				}
+			}
+
+		}
+		Matriz B = new Matriz();
+		B.setMatriz(newMatrizM2);
+
+		// newMatrizMultiplied = Multiplica.multiplica(A.getMatriz(),
+		// B.getMatriz());
+
+		for (int k = 0; k < LINHASM1; k++) {
+			for (int l = 0; l < COLUNASM1; l++) {
+				System.out.println("======="+newMatrizM1[k][l]);
+			}
+		}
 
 	}
 
-	private double[][] calculate(Matriz A, Matriz B) {
+	private void generateM3Pane() {
 
-		return Multiplica.multiplica(A.getMatriz(), A.getMatriz());
+		for (int i = 0; i < LINHASM1; i++) {
+			RowConstraints rowConstraints = new RowConstraints();
+			rowConstraints.setVgrow(Priority.SOMETIMES);
+			M3.getRowConstraints().add(rowConstraints);
+		}
+		for (int j = 0; j < COLUNASM2; j++) {
+			ColumnConstraints columnConstraints = new ColumnConstraints();
+			columnConstraints.setHgrow(Priority.SOMETIMES);
+			M3.getColumnConstraints().add(columnConstraints);
+		}
+
+		for (int i = 0; i < LINHASM1; i++) {
+			for (int j = 0; j < COLUNASM2; j++) {
+				// System.out.println(newMatrizMultiplied[i][j]);
+				addFieldCalculated(i, j);
+			}
+		}
 
 	}
 
@@ -155,9 +205,19 @@ public class MultiMatrizesController implements Initializable {
 
 	}
 
+	private void addFieldCalculated(int lines, int columns) {
+		TextField textField = new TextField();
+
+		textField.setText(String.valueOf(newMatrizMultiplied[lines][columns]));
+
+		M3.add(textField, columns, lines);
+
+	}
+
 	@FXML
 	public void onClickCalculate() {
-
+		check();
+		generateM3Pane();
 	}
 
 }
