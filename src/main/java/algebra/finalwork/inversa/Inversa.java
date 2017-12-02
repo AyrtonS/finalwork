@@ -14,13 +14,13 @@ public class Inversa {
 	
 		if(matriz.isQuadrada() && matriz.getLine()==2){
 			
-			Object[][] auxiliarMatrix = new Object[matriz.getLine()][matriz.getColumn()];
-			Object[][] originalMatrix = matriz.getMatriz();
+			double[][] auxiliarMatrix = new double[matriz.getLine()][matriz.getColumn()];
+			double[][] originalMatrix = matriz.getMatriz();
 			
 			auxiliarMatrix[0][0] = originalMatrix[1][1];
 			auxiliarMatrix[1][1] = originalMatrix[0][0];
-			auxiliarMatrix[0][1] = (Integer) originalMatrix[0][1] * (-1);
-			auxiliarMatrix[1][0] = (Integer) originalMatrix[1][0] * (-1); 
+			auxiliarMatrix[0][1] = originalMatrix[0][1] * (-1);
+			auxiliarMatrix[1][0] = originalMatrix[1][0] * (-1); 
 			
 			
 			
@@ -30,7 +30,7 @@ public class Inversa {
 			inverse.setQuadrada(true);
 			
 			Transposicao transposicao = new Transposicao();
-			Object[][] transposedMatrix = new Object[matriz.getLine()][matriz.getColumn()];
+			double[][] transposedMatrix = new double[matriz.getLine()][matriz.getColumn()];
 			
 			
 			transposedMatrix = transposicao.transposicao(inverse.getMatriz(), inverse.getLine(), inverse.getColumn());

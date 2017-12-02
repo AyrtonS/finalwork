@@ -1,9 +1,9 @@
 package algebra.finalwork.multiplicacaoescalar;
 
 public class Escalar {
-public Object[][] escalar(Object[][] matriz1,int n, int m,int x) {
+public double[][] escalar(double[][] matriz1,int n, int m,int x) {
 		
-	Object[][] aux = new Object[n][m];
+	double[][] aux = new double[n][m];
 		
 		try{
 			

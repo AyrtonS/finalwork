@@ -4,7 +4,7 @@ public class Matriz {
 
 	private int line;
 	private int column;
-	private Object[][] matriz;
+	private double[][] matriz;
 	
 	private Matriz transposta;
 	private Matriz inversa;
@@ -42,11 +42,11 @@ public class Matriz {
 		this.inversa = inversa;
 	}
 
-	public Object[][] getMatriz() {
+	public double[][] getMatriz() {
 		return matriz;
 	}
 
-	public void setMatriz(Object[][] matriz) {
+	public void setMatriz(double[][] matriz) {
 		this.matriz = matriz;
 	}
 

@@ -2,9 +2,9 @@ package algebra.finalwork.transposicao;
 
 public class Transposicao {
 
-	public static Object[][] transposicao(Object[][] matriz1,int n, int m) {
+	public static double[][] transposicao(double[][] matriz1,int n, int m) {
 		
-		Object[][] aux = new Object[m][n];
+		double[][] aux = new double[m][n];
 		for(int i = 0; i < m; i++ ){
 			for(int j = 0; j < n; j++){
 				//System.out.println(matriz1[j][i]);
@@ -15,7 +15,7 @@ public class Transposicao {
 	}
 
 	public static void main(String[] args) {
-		Object[][] o = new Object[2][3];
+		double[][] o = new double[2][3];
 		
 		o[0][0] = 1;
 		o[0][1] = 2;
@@ -24,7 +24,7 @@ public class Transposicao {
 		o[1][1] = 5;
 		o[1][2] = 6;
 		
-		Object[][] d = transposicao(o, 2, 3);
+		double[][] d = transposicao(o, 2, 3);
 		for(int i = 0; i < 3; i++ ){
 			for(int j = 0; j < 2; j++){
 				System.out.print(d[i][j]);

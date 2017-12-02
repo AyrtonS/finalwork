@@ -34,7 +34,7 @@ public class TranspostaController implements Initializable {
 
 	private static int lineCount;
 	private static int columnCount;
-	private static Object[][] newMatriz;
+	private static double[][] newMatriz;
 	private static Matriz matriz = new Matriz();
 
 	@Override
@@ -109,7 +109,7 @@ public class TranspostaController implements Initializable {
 		lineCount = Integer.parseInt(lineField.getText());
 		columnCount = Integer.parseInt(columnField.getText());
 
-		newMatriz = new Object[lineCount][columnCount];
+		newMatriz = new double[lineCount][columnCount];
 		while (nodes.hasNext()) {
 			TextField field = (TextField) nodes.next();
 			if (!field.equals("")) {

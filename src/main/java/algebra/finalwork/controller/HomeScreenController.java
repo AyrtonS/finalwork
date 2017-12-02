@@ -124,4 +124,26 @@ public class HomeScreenController {
 
 	}
 	
+	
+	@FXML
+	public void loadDeterminante() {
+
+		try {
+			Parent root = FXMLLoader.load(FXMLResources.DETERMINANTE);
+
+			Scene scene = new Scene(root);
+
+			Stage addingStage = new Stage();
+			addingStage.setScene(scene);
+			addingStage.centerOnScreen();
+			addingStage.setTitle("Determinantes");
+			addingStage.show();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
 }

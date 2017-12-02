@@ -45,8 +45,8 @@ public class MultiMatrizesController implements Initializable {
 	public static int LINHASM2;
 	public static int COLUNASM2;
 
-	public static Object[][] newMatrizM1;
-	public static Object[][] newMatrizM2;
+	public double[][] newMatrizM1;
+	public double[][] newMatrizM2;
 	public static double[][] newMatrizMultiplied;
 
 	/**
@@ -122,15 +122,15 @@ public class MultiMatrizesController implements Initializable {
 
 		int i = 0;
 		int j = 0;
-		newMatrizM1 = new Object[LINHASM1][COLUNASM1];
+		newMatrizM1 = new double[LINHASM1][COLUNASM1];
 		while (items.hasNext()) {
 
 			TextField field = (TextField) items.next();
 			if (!field.equals("")) {
 				if (j < COLUNASM1) {
 					newMatrizM1[i][j] = Double.parseDouble(field.getText());
-					//System.out.println(newMatrizM1[i][j]);
-
+					System.out.println(newMatrizM1[i][j]);
+					j++;
 				}
 				if (j == COLUNASM1) {
 					j = 0;
@@ -139,12 +139,14 @@ public class MultiMatrizesController implements Initializable {
 			}
 
 		}
-
+		
+		System.out.println("------------------------------");
+		
 		ListIterator<Node> items2 = M2.getChildren().listIterator();
 
 		i = 0;
 		j = 0;
-		newMatrizM2 = new Object[LINHASM2][COLUNASM2];
+		newMatrizM2 = new double[LINHASM2][COLUNASM2];
 
 		while (items2.hasNext()) {
 
@@ -152,6 +154,8 @@ public class MultiMatrizesController implements Initializable {
 			if (!field.equals("")) {
 				if (j < COLUNASM2) {
 					newMatrizM2[i][j] = Double.parseDouble(field.getText());
+					System.out.println(newMatrizM2[i][j]);
+					j++;
 				}
 				if (j == COLUNASM2) {
 					j = 0;
@@ -160,15 +164,36 @@ public class MultiMatrizesController implements Initializable {
 			}
 
 		}
-		Matriz B = new Matriz();
-		B.setMatriz(newMatrizM2);
-
-		// newMatrizMultiplied = Multiplica.multiplica(A.getMatriz(),
-		// B.getMatriz());
-
+		Matriz A = new Matriz();
+		A.setMatriz(newMatrizM1);
+		System.out.println("------------------------------");
+		
 		for (int k = 0; k < LINHASM1; k++) {
 			for (int l = 0; l < COLUNASM1; l++) {
 				System.out.println("======="+newMatrizM1[k][l]);
+			}
+		}
+		
+		System.out.println("-----------------------");
+		
+		for (int k = 0; k < LINHASM2; k++) {
+			for (int l = 0; l < COLUNASM2; l++) {
+				System.out.println("======="+newMatrizM2[k][l]);
+			}
+		}
+		
+		
+		Matriz B = new Matriz();
+		B.setMatriz(newMatrizM2);
+
+		 newMatrizMultiplied = Multiplica.multiplica(A.getMatriz(),
+		 B.getMatriz());
+		 
+		System.out.println("--------------------------"); 
+		 
+		for (int k = 0; k < LINHASM1-1; k++) {
+			for (int l = 0; l < COLUNASM2-1; l++) {
+				System.out.println("======="+newMatrizMultiplied[k][l]);
 			}
 		}
 

@@ -10,4 +10,7 @@ public class FXMLResources {
 	public static final URL MULTESCALARSCREEN = FXMLResources.class.getResource("/fxml/multporescalar.fxml");
 	public static final URL TRANSPOSTASCREEN = FXMLResources.class.getResource("/fxml/transposta.fxml");
 	public static final URL MULTIMATRIZ = FXMLResources.class.getResource("/fxml/multiplicamatrizes.fxml");
+	public static final URL DETERMINANTE = FXMLResources.class.getResource("/fxml/determinante.fxml");
+
+
 }

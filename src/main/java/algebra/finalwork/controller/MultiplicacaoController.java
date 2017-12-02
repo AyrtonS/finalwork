@@ -90,7 +90,7 @@ public class MultiplicacaoController implements Initializable {
 
 		Escalar escalar = new Escalar();
 
-		Object[][] matriz1 = mountMatriz();
+		double[][] matriz1 = mountMatriz();
 
 		Matriz matriz = new Matriz();
 
@@ -150,11 +150,11 @@ public class MultiplicacaoController implements Initializable {
 	}
 	
 	
-	private Object[][] mountMatriz() {
+	private double[][] mountMatriz() {
 		ListIterator<Node> firstNodes = initGrid.getChildren().listIterator();
 
 		try {
-			Object[][] newMatriz = new Object[colValue][linValue];
+			double[][] newMatriz = new double[colValue][linValue];
 			int j = 0;
 			int i = 0;
 			while (firstNodes.hasNext()) {

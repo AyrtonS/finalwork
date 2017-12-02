@@ -5,7 +5,7 @@ import algebra.finalwork.model.Matriz;
 public class MatrizUtils {
 
 	
-public static Matriz createMatriz(Object[][] obj,int line,int column,boolean quadrada){
+public static Matriz createMatriz(double[][] obj,int line,int column,boolean quadrada){
 		
 		Matriz matriz = new Matriz();
 		
