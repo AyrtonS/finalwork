@@ -21,13 +21,20 @@
                 <MenuItem mnemonicParsing="false" text="Sair" />
               </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Funçoes">
+            <Menu mnemonicParsing="false" text="Algebra Matricial">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#loadAddition" text="Adicao de Matrizes" />
                 <MenuItem mnemonicParsing="false" onAction="#loadSubtraction" text="Subtracao de Matrizes" />
                 <MenuItem mnemonicParsing="false" onAction="#loadMultimatrizes" text="Multiplicaçao de Matrizes" />
                 <MenuItem mnemonicParsing="false" onAction="#loadEscalar" text="Multiplicaçao por Escalar" />              	
               	<MenuItem mnemonicParsing="false" onAction="#loadTransposta" text="Matriz Transposta" />
+              		<MenuItem mnemonicParsing="false" onAction="#loadDeterminante" text="Determinante" />
+              </items>
+            </Menu>
+            
+             <Menu mnemonicParsing="false" text="Sistemas">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#loadAddition" text="Fatoração L.U" />
               		<MenuItem mnemonicParsing="false" onAction="#loadDeterminante" text="Determinante" />
               </items>
             </Menu>
