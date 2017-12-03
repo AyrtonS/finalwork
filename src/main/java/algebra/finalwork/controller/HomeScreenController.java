@@ -146,4 +146,25 @@ public class HomeScreenController {
 
 	}
 	
+	@FXML
+	public void loadLUScreen() {
+
+		try {
+			Parent root = FXMLLoader.load(FXMLResources.LUSCREEN);
+
+			Scene scene = new Scene(root);
+
+			Stage addingStage = new Stage();
+			addingStage.setScene(scene);
+			addingStage.centerOnScreen();
+			addingStage.setTitle("Matriz LU");
+			addingStage.show();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
 }
