@@ -1,92 +1,70 @@
 package algebra.finalwork.gaussjordan;
 
-
-
 public class Gaussjordan {
-	 private double[][] augmentedMatrix;
+	public static double[][] matrizAumentada;
 
-	    /**
-	     * Constructor for a GaussJordan object. Takes in a two dimensional double
-	     * array holding the matrix.
-	     *
-	     * @param matrix A double[][] containing the augmented matrix
-	     */
-	    public Gaussjordan(double[][] matrix) {
-	        augmentedMatrix = matrix;
-	    }
+	
+	public Gaussjordan(double[][] matrix) {
+		matrizAumentada = matrix;
+	}
 
-	    /**
-	     * Runs a Gauss-Jordan elimination on the augmented matrix in order to put
-	     * it into reduced row echelon form
-	     *
-	     */
-	    public void eliminate() {
-	        int startColumn = 0;
-	        for (int row=0; row<augmentedMatrix.length; row++) {
-	            //if the number in the start column is 0, try to switch with another
-	            while (augmentedMatrix[row][startColumn]==0.0){
-	                boolean switched = false;
-	                int i=row;
-	                while (!switched && i<augmentedMatrix.length) {
-	                    if(augmentedMatrix[i][startColumn]!=0.0){
-	                        double[] temp = augmentedMatrix[i];
-	                        augmentedMatrix[i]=augmentedMatrix[row];
-	                        augmentedMatrix[row]=temp;
-	                        switched = true;
-	                    }
-	                    i++;
-	                }
-	                //if after trying to switch, it is still 0, increase column
-	                if (augmentedMatrix[row][startColumn]==0.0) {
-	                    startColumn++;
-	                }
-	            }
-	            //if the number isn't one, reduce to one
-	            if(augmentedMatrix[row][startColumn]!=1.0) {
-	                double divisor = augmentedMatrix[row][startColumn];
-	                for (int i=startColumn; i<augmentedMatrix[row].length; i++) {
-	                    augmentedMatrix[row][i] = augmentedMatrix[row][i]/divisor;
-	                }
-	            }
-	            //make sure the number in the start column of all other rows is 0
-	            for (int i=0; i<augmentedMatrix.length; i++) {
-	                if (i!=row && augmentedMatrix[i][startColumn]!=0) {
-	                    double multiple = 0-augmentedMatrix[i][startColumn];
-	                    for (int j=startColumn; j<augmentedMatrix[row].length; j++){
-	                        augmentedMatrix[i][j] +=
-	                            multiple*augmentedMatrix[row][j];
-	                    }
-	                }
-	            }
-	            startColumn++;
-	        }
-	    }
+	
+	public double[][] eliminate() {
+		int startColumn = 0;
+		for (int row = 0; row < matrizAumentada.length; row++) {
+			while (matrizAumentada[row][startColumn] == 0.0) {
+				boolean switched = false;
+				int i = row;
+				while (!switched && i < matrizAumentada.length) {
+					if (matrizAumentada[i][startColumn] != 0.0) {
+						double[] temp = matrizAumentada[i];
+						matrizAumentada[i] = matrizAumentada[row];
+						matrizAumentada[row] = temp;
+						switched = true;
+					}
+					i++;
+				}
+				if (matrizAumentada[row][startColumn] == 0.0) {
+					startColumn++;
+				}
+			}
+			if (matrizAumentada[row][startColumn] != 1.0) {
+				double divisor = matrizAumentada[row][startColumn];
+				for (int i = startColumn; i < matrizAumentada[row].length; i++) {
+					matrizAumentada[row][i] = matrizAumentada[row][i] / divisor;
+				}
+			}
+			// make sure the number in the start column of all other rows is 0
+			for (int i = 0; i < matrizAumentada.length; i++) {
+				if (i != row && matrizAumentada[i][startColumn] != 0) {
+					double multiple = 0 - matrizAumentada[i][startColumn];
+					for (int j = startColumn; j < matrizAumentada[row].length; j++) {
+						matrizAumentada[i][j] += multiple * matrizAumentada[row][j];
+					}
+				}
+			}
+			startColumn++;
+		}
+		
+		return matrizAumentada;
+	}
+	
+	public String toString() {
+		String text = "";
+		for (int i = 0; i < matrizAumentada.length; i++) {
+			for (int j = 0; j < matrizAumentada[i].length; j++) {
+				text += matrizAumentada[i][j] + ", ";
+			}
+			text += "\n";
+		}
+		return text;
+	}
 
-	    /**
-	     * Returns a String with the contents of the augmented matrix.
-	     *
-	     * @return A String representation of the augmented matrix
-	     */
-	    public String toString() {
-	        String text = "";
-	        for (int i=0; i<augmentedMatrix.length; i++) {
-	            for (int j=0; j<augmentedMatrix[i].length; j++) {
-	                text+=augmentedMatrix[i][j] + ", ";
-	            }
-	            text+="\n";
-	        }
-	        return text;
-	    }
-	    
-	        public static void main(String[] args) {
-	            double[][] matriz1 = {
-	                {1,2,-3,5},
-	                {-2,1,-4,-2},
-	                {1,-3,5,-1}
-	            };
-	            Gaussjordan example = new Gaussjordan(matriz1);
-	            example.eliminate();
-	            System.out.println(example);
-	        }
+	public static void main(String[] args) {
+		double[][] matriz1 = { { 1, 2, -3, 5 }, { -2, 1, -4, -2 }, { 1, -3, 5, -1 } };
+		Gaussjordan example = new Gaussjordan(matriz1);
+		example.eliminate();
+		System.out.println(example);
+	}
 
 }

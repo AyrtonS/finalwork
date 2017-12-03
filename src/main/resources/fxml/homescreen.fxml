@@ -35,7 +35,7 @@
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#loadLUScreen" text="Fatoração L.U" />
                 <MenuItem mnemonicParsing="false" onAction="#loadGauss" text="Eliminação Gaussiana" />
-                <MenuItem mnemonicParsing="false" onAction="#loadLUScreen" text="Gauss-Jordan" />
+                <MenuItem mnemonicParsing="false" onAction="#loadGaussJordan" text="Gauss-Jordan" />
                 
               </items>
             </Menu>
