@@ -34,7 +34,7 @@ public class LuController implements Initializable {
 	@FXML
 	private GridPane uGrid;
 
-	private static double[][] newMatrizM1;
+	private double[][] newMatrizM1;
 	private static double[][] newMatrizML;
 	private static double[][] newMatrizMU;
 

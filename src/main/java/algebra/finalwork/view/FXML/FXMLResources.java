@@ -12,5 +12,5 @@ public class FXMLResources {
 	public static final URL MULTIMATRIZ = FXMLResources.class.getResource("/fxml/multiplicamatrizes.fxml");
 	public static final URL DETERMINANTE = FXMLResources.class.getResource("/fxml/determinante.fxml");
 	public static final URL LUSCREEN = FXMLResources.class.getResource("/fxml/luscreen.fxml");
-
+	public static final URL GAUSSSCREEN = FXMLResources.class.getResource("/fxml/gauss.fxml");
 }

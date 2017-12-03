@@ -49,13 +49,13 @@ public class GaussianElimination {
 
     // sample client
     public static void main(String[] args) {
-        int n = 3;
+        int n = 4;
         double[][] A = {
-            { 1,1, -1 },
-            { 1,-2,5},
-            {4,1,4}};
+            { 1,1, -1,5 },
+            { 1,-2,5,7},
+            {4,1,4,8},{2,7,5,9}};
             
-        double[] b = { 0,21,31 };
+        double[] b = { 0,18,5,5 };
         double[] x = EliminacaoGaussiana(A, b);
 
 

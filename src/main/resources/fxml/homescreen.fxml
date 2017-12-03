@@ -21,7 +21,7 @@
                 <MenuItem mnemonicParsing="false" text="Sair" />
               </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Matriz Lineares">
+            <Menu mnemonicParsing="false" text="Álgebra Matricial">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#loadAddition" text="Adicao de Matrizes" />
                 <MenuItem mnemonicParsing="false" onAction="#loadSubtraction" text="Subtracao de Matrizes" />
@@ -34,6 +34,9 @@
       		     <Menu mnemonicParsing="false" text="Sistemas">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#loadLUScreen" text="Fatoração L.U" />
+                <MenuItem mnemonicParsing="false" onAction="#loadGauss" text="Eliminação Gaussiana" />
+                <MenuItem mnemonicParsing="false" onAction="#loadLUScreen" text="Gauss-Jordan" />
+                
               </items>
             </Menu>
       	
