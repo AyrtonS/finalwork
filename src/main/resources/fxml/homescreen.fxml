@@ -21,7 +21,7 @@
                 <MenuItem mnemonicParsing="false" text="Sair" />
               </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Funçoes">
+            <Menu mnemonicParsing="false" text="Matriz Lineares">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#loadAddition" text="Adicao de Matrizes" />
                 <MenuItem mnemonicParsing="false" onAction="#loadSubtraction" text="Subtracao de Matrizes" />
@@ -31,7 +31,12 @@
               		<MenuItem mnemonicParsing="false" onAction="#loadDeterminante" text="Determinante" />
               </items>
             </Menu>
-      
+      		     <Menu mnemonicParsing="false" text="Sistemas">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#loadLUScreen" text="Fatoração L.U" />
+              </items>
+            </Menu>
+      	
           </menus>
           <stylesheets>
             <String fx:value="/finalwork/src/main/resources/css/style.css" />
