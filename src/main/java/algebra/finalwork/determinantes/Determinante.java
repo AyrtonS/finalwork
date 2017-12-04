@@ -9,7 +9,7 @@ public class Determinante {
 	public static double determinante2x2(Matriz matriz) {
 
 		double[][] m1 = matriz.getMatriz();
-		return m1[0][0] * m1[1][1] + m1[0][1] * m1[1][0];
+		return m1[0][0] * m1[1][1] - m1[0][1] * m1[1][0];
 
 	}
 

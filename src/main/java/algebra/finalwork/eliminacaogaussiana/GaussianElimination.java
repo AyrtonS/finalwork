@@ -3,13 +3,13 @@ package algebra.finalwork.eliminacaogaussiana;
 public class GaussianElimination {
 	private static final double EPSILON = 1e-10;
 
-    // Gaussian elimination with partial pivoting
+   
     public static double[] EliminacaoGaussiana(double[][] A, double[] b) {
         int n = b.length;
 
         for (int p = 0; p < n; p++) {
 
-            // find pivot row and swap
+       
             int max = p;
             for (int i = p + 1; i < n; i++) {
                 if (Math.abs(A[i][p]) > Math.abs(A[max][p])) {
@@ -19,12 +19,12 @@ public class GaussianElimination {
             double[] temp = A[p]; A[p] = A[max]; A[max] = temp;
             double   t    = b[p]; b[p] = b[max]; b[max] = t;
 
-            // singular or nearly singular
+            
             if (Math.abs(A[p][p]) <= EPSILON) {
-                throw new ArithmeticException("Matrix is singular or nearly singular");
+                throw new ArithmeticException("Erro");
             }
 
-            // pivot within A and b
+            
             for (int i = p + 1; i < n; i++) {
                 double alpha = A[i][p] / A[p][p];
                 b[i] -= alpha * b[p];
@@ -34,7 +34,6 @@ public class GaussianElimination {
             }
         }
 
-        // back substitution
         double[] x = new double[n];
         for (int i = n - 1; i >= 0; i--) {
             double sum = 0.0;
@@ -47,7 +46,7 @@ public class GaussianElimination {
     }
 
 
-    // sample client
+    
     public static void main(String[] args) {
         int n = 4;
         double[][] A = {

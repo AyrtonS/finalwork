@@ -34,7 +34,7 @@ public class Gaussjordan {
 					matrizAumentada[row][i] = matrizAumentada[row][i] / divisor;
 				}
 			}
-			// make sure the number in the start column of all other rows is 0
+			// Certifica que o numero na coluna de inicio possuem zeros.
 			for (int i = 0; i < matrizAumentada.length; i++) {
 				if (i != row && matrizAumentada[i][startColumn] != 0) {
 					double multiple = 0 - matrizAumentada[i][startColumn];
