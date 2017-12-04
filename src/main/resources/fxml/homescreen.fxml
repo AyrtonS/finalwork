@@ -28,7 +28,9 @@
                 <MenuItem mnemonicParsing="false" onAction="#loadMultimatrizes" text="Multiplicaçao de Matrizes" />
                 <MenuItem mnemonicParsing="false" onAction="#loadEscalar" text="Multiplicaçao por Escalar" />              	
               	<MenuItem mnemonicParsing="false" onAction="#loadTransposta" text="Matriz Transposta" />
-              		<MenuItem mnemonicParsing="false" onAction="#loadDeterminante" text="Determinante" />
+           		<MenuItem mnemonicParsing="false" onAction="#loadDeterminante" text="Determinante" />
+           		<MenuItem mnemonicParsing="false" onAction="#loadPotencia" text="Potência" />
+              		
               </items>
             </Menu>
       		     <Menu mnemonicParsing="false" text="Sistemas">

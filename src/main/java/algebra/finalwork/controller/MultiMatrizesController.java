@@ -97,13 +97,13 @@ public class MultiMatrizesController implements Initializable {
 		for (int i = 0; i < LINHASM2; i++) {
 			RowConstraints rowConstraints = new RowConstraints();
 			rowConstraints.setVgrow(Priority.SOMETIMES);
-			M1.getRowConstraints().add(rowConstraints);
+			M2.getRowConstraints().add(rowConstraints);
 		}
 
 		for (int j = 0; j < COLUNASM2; j++) {
 			ColumnConstraints columnConstraints = new ColumnConstraints();
 			columnConstraints.setHgrow(Priority.SOMETIMES);
-			M1.getColumnConstraints().add(columnConstraints);
+			M2.getColumnConstraints().add(columnConstraints);
 		}
 
 		for (int i = 0; i < LINHASM2; i++) {

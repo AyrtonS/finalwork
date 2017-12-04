@@ -14,5 +14,6 @@ public class FXMLResources {
 	public static final URL LUSCREEN = FXMLResources.class.getResource("/fxml/luscreen.fxml");
 	public static final URL GAUSSSCREEN = FXMLResources.class.getResource("/fxml/gauss.fxml");
 	public static final URL GAUSSJORDANSCREEN = FXMLResources.class.getResource("/fxml/gauss_jordan.fxml");
+	public static final URL POTENCIA = FXMLResources.class.getResource("/fxml/potencia.fxml");
 
 }

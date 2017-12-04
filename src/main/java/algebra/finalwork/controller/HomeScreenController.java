@@ -210,5 +210,27 @@ public class HomeScreenController {
 
 	}
 	
+
+	@FXML
+	public void loadPotencia() {
+
+		try {
+			Parent root = FXMLLoader.load(FXMLResources.POTENCIA);
+
+			Scene scene = new Scene(root);
+
+			Stage addingStage = new Stage();
+			addingStage.setScene(scene);
+			addingStage.centerOnScreen();
+			addingStage.setTitle("Potencia");
+			addingStage.show();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
 	
 }
