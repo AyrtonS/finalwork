@@ -39,6 +39,8 @@ public class InversaAtual {
 
 		return (invertedMatrix);
 	}
+	
+	
 	public static void transformToUpperTriangle (double[][] matrix, int[] index) {
 		double[] c;
 		double c0, c1, pi0, pi1, pj;
