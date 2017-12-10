@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ListIterator;
 import java.util.ResourceBundle;
 
+import algebra.finalwork.determinanteatual.DeterminanteAtual;
 import algebra.finalwork.determinantes.Determinante;
 import algebra.finalwork.model.Matriz;
 import javafx.fxml.FXML;
@@ -36,6 +37,13 @@ public class DeterminanteController implements Initializable{
 	private double newMatriz[][];
 	@FXML
 	private TextField resultField;
+	@FXML
+	private TextField line;
+	@FXML
+	private TextField col;
+	
+	
+	
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -51,13 +59,9 @@ public class DeterminanteController implements Initializable{
 			matriz.getChildren().clear();
 		}
 		
-		LINHASM1 = Integer.parseInt(String.valueOf(determinanteComboBox.getValue()));
-		if(LINHASM1 == 2){
-			COLUNASM1 = 2;
-		}else{
-			COLUNASM1 = 3;
-		}
-
+		LINHASM1 = Integer.parseInt(line.getText());
+		COLUNASM1 = Integer.parseInt(col.getText());
+		
 		for (int i = 0; i < LINHASM1; i++) {
 			RowConstraints rowConstraints = new RowConstraints();
 			rowConstraints.setVgrow(Priority.SOMETIMES);
@@ -117,10 +121,8 @@ public class DeterminanteController implements Initializable{
 		m1.setLine(LINHASM1);
 		m1.setColumn(COLUNASM1);
 		System.out.println("----"+newMatriz[0][0]);
-		if(LINHASM1==2){
-			result = Determinante.determinante2x2(m1);
-		}else
-			result = Determinante.determinante3X3(m1);
+			result = DeterminanteAtual.matrixDeterminant(newMatriz);
+
 		
 		System.out.println(result);
 		resultField.setText(String.valueOf(result));
