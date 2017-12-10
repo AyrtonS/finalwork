@@ -30,6 +30,7 @@
               	<MenuItem mnemonicParsing="false" onAction="#loadTransposta" text="Matriz Transposta" />
            		<MenuItem mnemonicParsing="false" onAction="#loadDeterminante" text="Determinante" />
            		<MenuItem mnemonicParsing="false" onAction="#loadPotencia" text="Potência" />
+           		<MenuItem mnemonicParsing="false" onAction="#loadInversa" text="Inversa" />
               		
               </items>
             </Menu>

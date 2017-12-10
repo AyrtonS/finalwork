@@ -39,7 +39,7 @@ public class InversaAtual {
 
 		return (invertedMatrix);
 	}
-	public static void transformToUpperTriangle (double[][] matrix, int[] index) {
+	public static void transformaEmTriangularSuperior (double[][] matrix, int[] index) {
 		double[] c;
 		double c0, c1, pi0, pi1, pj;
 		int itmp, k;
@@ -96,15 +96,16 @@ public class InversaAtual {
 	public static void main (String[] args) {
 		double matrix[][] = {
 				{2, 3},
-				{2,5},
+				{2,5}
 				//{-100, -100, 300,},
 		};
 InversaAtual I = new InversaAtual();
 		double invertedMatrix[][] = I.invertMatrix(matrix);
 		for(int i = 0; i < 2;i++) {
 			for(int j = 0; j < 2; j++) {
-				System.out.println(invertedMatrix[i][j]);
+				System.out.print(invertedMatrix[i][j]+" | ");
 			}
+			System.out.println("");
 		}
 
 		

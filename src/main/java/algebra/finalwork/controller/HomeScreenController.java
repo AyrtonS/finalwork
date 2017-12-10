@@ -233,4 +233,25 @@ public class HomeScreenController {
 	}
 	
 	
+	@FXML
+	public void loadInversa() {
+
+		try {
+			Parent root = FXMLLoader.load(FXMLResources.INVERSA);
+
+			Scene scene = new Scene(root);
+
+			Stage addingStage = new Stage();
+			addingStage.setScene(scene);
+			addingStage.centerOnScreen();
+			addingStage.setTitle("Inversa");
+			addingStage.show();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
 }
