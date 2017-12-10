@@ -13,7 +13,7 @@ public class InversaAtual {
 			auxiliaryMatrix[i][i] = 1;
 		}
 
-		transformToUpperTriangle (matrix, index);
+		transformaEmTriangularSuperior (matrix, index);
 
 		for (int i = 0; i < (matrix.length - 1); ++i) {
 			for (int j = (i + 1); j < matrix.length; ++j) {
