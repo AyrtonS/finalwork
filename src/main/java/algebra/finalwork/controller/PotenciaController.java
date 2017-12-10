@@ -29,11 +29,11 @@ public class PotenciaController implements Initializable{
 	@FXML
 	private GridPane M2;
 	
-	public static int LINHASM1;
-	public static int COLUNASM1;
-	public static double EXPONENT;
-	public static double newMatrizM1[][];
-	public static double result[][];
+	public int LINHASM1;
+	public int COLUNASM1;
+	public double EXPONENT;
+	public double newMatrizM1[][];
+	public double result[][];
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -90,7 +90,9 @@ public class PotenciaController implements Initializable{
 	
 	@FXML
 	private void check() {
+		
 
+		
 		ListIterator<Node> items = M1.getChildren().listIterator();
 
 		int i = 0;
@@ -100,7 +102,9 @@ public class PotenciaController implements Initializable{
 
 			TextField field = (TextField) items.next();
 			if (!field.equals("")) {
+				if(i == LINHASM1) break;
 				if (j < COLUNASM1) {
+					System.out.println("i : "+i+" j : "+j);
 					newMatrizM1[i][j] = Double.parseDouble(field.getText());
 					System.out.println(newMatrizM1[i][j]);
 					j++;
@@ -118,6 +122,7 @@ public class PotenciaController implements Initializable{
 		matriz.setMatriz(newMatrizM1);
 		
 		result = Potencia.getExponentialMatrix(matriz,EXPONENT);
+		
 		generateM2Pane();
 		
 	}
@@ -126,20 +131,20 @@ public class PotenciaController implements Initializable{
 	private void generateM2Pane() {
 
 
-		for (int i = 0; i < LINHASM1; i++) {
+		for (int i = 0; i < result[0].length; i++) {
 			RowConstraints rowConstraints = new RowConstraints();
 			rowConstraints.setVgrow(Priority.SOMETIMES);
 			M2.getRowConstraints().add(rowConstraints);
 		}
 
-		for (int j = 0; j < COLUNASM1; j++) {
+		for (int j = 0; j < result.length; j++) {
 			ColumnConstraints columnConstraints = new ColumnConstraints();
 			columnConstraints.setHgrow(Priority.SOMETIMES);
 			M2.getColumnConstraints().add(columnConstraints);
 		}
 
-		for (int i = 0; i < LINHASM1; i++) {
-			for (int j = 0; j < COLUNASM1; j++) {
+		for (int i = 0; i < result[0].length; i++) {
+			for (int j = 0; j < result.length; j++) {
 				addFieldToResult(i, j, M2);
 
 			}

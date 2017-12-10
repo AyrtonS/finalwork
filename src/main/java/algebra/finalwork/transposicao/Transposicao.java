@@ -7,9 +7,11 @@ public class Transposicao {
 		double[][] aux = new double[m][n];
 		for(int i = 0; i < m; i++ ){
 			for(int j = 0; j < n; j++){
-				//System.out.println(matriz1[j][i]);
+				System.out.println("i "+i +" j "+j );
 				aux[i][j] = matriz1[j][i];
+				System.out.println(aux[i][j]+" | ");
 			}
+			System.out.println("");
 		}
 		return aux;
 	}
